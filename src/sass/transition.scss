@@ -1,0 +1,35 @@
+/* ==================================================
+ * 由 Transition.scss 统一管理全局Transition, Animation
+ * ================================================== */
+
+// Page Turn on Transian Effect
+.turn-on {
+  &-enter {
+    transform: translate3d(100%, 0, 0);
+  }
+  &-leave-to {
+    transform: translate3d(-20%, 0, 0);
+  }
+  &-enter-active, &-leave-active  {
+    transition: transform .4s ease;
+  }
+}
+
+// Page Turn Off Transian Effect
+.turn-off {
+  &-enter {
+    transform: translate3d(-20%, 0, 0);
+  }
+  &-leave-to {
+    transform: translate3d(100%, 0, 0);
+  }
+  &-leave-active {
+    z-index: 2;
+  }
+  &-enter-active, &-leave-active  {
+    transition: transform .4s ease;
+  }
+}
+
+
+
