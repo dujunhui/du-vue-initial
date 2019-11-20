@@ -3,8 +3,6 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import "./cube-ui.js";
-// 全局scss
-import "./sass/index.scss";
 
 Vue.config.productionTip = false;
 

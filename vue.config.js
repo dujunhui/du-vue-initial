@@ -1,10 +1,15 @@
 module.exports = {
+  publicPath: "/",
   // 配置高于chainWebpack中关于 css loader 的配置
   css: {
     loaderOptions: {
       stylus: {
         "resolve url": true,
         import: ["./src/theme"]
+      },
+      scss: {
+        // 全局scss
+        prependData: `@import "@/sass/index.scss";`
       }
     }
   },
@@ -24,6 +29,10 @@ module.exports = {
           "^/api": "/api"
         }
       }
+    },
+    overlay: {
+      warnings: true,
+      errors: true
     }
   }
 };

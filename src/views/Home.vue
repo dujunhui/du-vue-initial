@@ -1,12 +1,15 @@
 <template>
   <div class="page">
-    <du-header></du-header>
-
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-    <cube-button @click="showDialog">Button</cube-button>
-    <p class="pCss">asdasdf是打发斯蒂芬</p>
-    <div class="box1">首页</div>
+    <du-header title="首页" haveBack v-on:back="back"> </du-header>
+    <div class="page-wrapper">
+      <img alt="Vue logo" src="../assets/logo.png" />
+      <HelloWorld msg="Welcome to Your Vue.js App" />
+      <cube-button @click="showDialog">Button</cube-button>
+      <div class="div1">
+        <p>asdasdf是打发斯蒂芬</p>
+      </div>
+      <div class="box1">首页</div>
+    </div>
   </div>
 </template>
 
@@ -32,14 +35,21 @@ export default {
         title: "Alert",
         content: "dialog content"
       }).show();
+    },
+    back() {
+      alert(0);
     }
   }
 };
 </script>
-<style scope type="text/scss">
-.pCss {
+<style scoped type="text/scss" lang="scss">
+.div1 {
   height: 100px;
   background-color: red;
+  p {
+    font-size: 12px;
+    color: white;
+  }
 }
 .box1 {
   width: 375px;
